@@ -23,7 +23,7 @@ function bucketSort(array, bucketSize) {
   }
   // Step 2: Initialize buckets
   // Default bucket size can be adjusted
-  bucketSize = bucketSize || 5;
+  bucketSize = bucketSize || Math.ceil(Math.sqrt(array.length));
   const bucketCount = Math.floor((max - min) / bucketSize) + 1;
   const buckets = new Array(bucketCount).fill().map(() => []);
   console.log(buckets);

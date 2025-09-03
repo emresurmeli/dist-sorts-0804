@@ -5,7 +5,7 @@
 // Bucket sort is very fast because it distributes elements into buckets strategically based on their values.
 // This, however, means it uses more memory for the sake of speed.
 
-function bucketSort(array, bucketSize) {
+function bucketSort(array) {
   // Step 1: Determine the minimum and maximum values in the array
   // Using Math
   const min = Math.min(...array);
@@ -23,7 +23,7 @@ function bucketSort(array, bucketSize) {
   }
   // Step 2: Initialize buckets
   // Default bucket size can be adjusted
-  bucketSize = bucketSize || Math.ceil(Math.sqrt(array.length));
+  const bucketSize = Math.ceil(Math.sqrt(array.length));
   const bucketCount = Math.floor((max - min) / bucketSize) + 1;
   const buckets = new Array(bucketCount).fill().map(() => []);
   console.log(buckets);
